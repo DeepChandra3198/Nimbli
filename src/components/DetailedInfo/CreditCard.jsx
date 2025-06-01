@@ -1,0 +1,330 @@
+import React, { Fragment, useState } from "react";
+import Select from "react-select";
+
+const CreditCard = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      formData.tags = JSON.stringify(tagValue);
+      formData.value = formData.value ? formData.value : 0;
+
+      const formDataToSend = new FormData();
+      for (const key in formData) {
+        if (formData[key] !== null) {
+          formDataToSend.append(key, formData[key]);
+        }
+      }
+
+      const response = await fetch(`${apiUrl}/lead/add-lead`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+        body: formDataToSend,
+      });
+      const resData = await response.json();
+      if (!response.ok) {
+        throw new Error(resData.message || "Failed to add lead");
+      }
+      togglePopup();
+      fetchLeadData();
+      setFormData(initialForm);
+      toast.success("Lead added successfully!");
+    } catch (error) {
+      toast.error(error.message || "Something went wrong");
+    }
+  };
+  //   insurance
+  const insuranceOptions = [
+    { value: "health", label: "Health Insurance" },
+    { value: "car", label: "Car Insurance" },
+    { value: "life", label: "Life Insurance" },
+    { value: "other", label: "Other" },
+  ];
+
+  const [selectedInsuranceType, setSelectedInsuranceType] = useState(null);
+  const [showInsuranceDropdown, setShowInsuranceDropdown] = useState(false);
+
+  const handleInsuranceCheckboxChange = (type) => {
+    setSelectedInsuranceType(type);
+    setShowInsuranceDropdown(type === "yes");
+  };
+  //   car
+  const brandOptions = [
+    { value: "toyota", label: "Toyota" },
+    { value: "honda", label: "Honda" },
+    { value: "ford", label: "Ford" },
+  ];
+
+  const modelOptions = [
+    { value: "corolla", label: "Corolla" },
+    { value: "civic", label: "Civic" },
+    { value: "focus", label: "Focus" },
+  ];
+
+  const yearOptions = [
+    { value: "2023", label: "2023" },
+    { value: "2022", label: "2022" },
+    { value: "2021", label: "2021" },
+  ];
+  const [selectedCarOwned, setSelectedCarOwned] = useState(null);
+  const [showCarDropdowns, setShowCarDropdowns] = useState(false);
+  const handleCarOwnedCheckboxChange = (type) => {
+    setSelectedCarOwned(type);
+    setShowCarDropdowns(type === "yes");
+  };
+  // disposition
+  const dispositionOptions = [
+    { value: "option1", label: "Option 1" },
+    { value: "option2", label: "Option 2" },
+    { value: "option3", label: "Option 3" },
+  ];
+  const [selectedDisposition, setSelectedDisposition] = useState(null);
+
+  const handleDispositionChange = (option) => {
+    setSelectedDisposition(option);
+  };
+  // card holder
+  const [selectedCardHolder, setSelectedCardHolder] = useState("");
+  const handleCardHolderCheckboxChange = (card) => {
+    setSelectedCardHolder(selectedCardHolder === card ? "" : card);
+  };
+  return (
+    <Fragment>
+      <div className="sidebar-layout mt-3">
+        <div className="toggle-body">
+          <div className="pro-create">
+            <form onSubmit={handleSubmit}>
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      Designation <span className="text-danger">*</span>
+                    </label>
+                    <input type="text" className="form-control" />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      Annual Income <span className="text-danger">*</span>
+                    </label>
+                    <input type="text" className="form-control" />
+                  </div>
+                </div>
+                <div className="col-md-9">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      Annual Income <span className="text-danger">*</span>
+                    </label>
+                    <input type="text" className="form-control" />
+                  </div>
+                </div>
+
+                <div className="col-md-4">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      Pin <span className="text-danger"></span>
+                    </label>
+                    <Select classNamePrefix="react-select" className="select" />
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      State <span className="text-danger"></span>
+                    </label>
+                    <Select
+                      classNamePrefix="react-select"
+                      className="select"
+                      //   value={stateOptions.find(
+                      //     (option) => option.value === formData.stateId
+                      //   )}
+                      //   onChange={(event) => {
+                      //     let { value } = event;
+                      //     handleInputChange({
+                      //       target: { name: "stateId", value },
+                      //     });
+                      //   }}
+                      //   options={stateOptions}
+                    />
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      City <span className="text-danger"></span>
+                    </label>
+                    <Select
+                      classNamePrefix="react-select"
+                      className="select"
+                      //   value={cityOptions.find(
+                      //     (option) => option.value === formData.cityId
+                      //   )}
+                      //   onChange={(event) => {
+                      //     let { value } = event;
+                      //     handleInputChange({
+                      //       target: { name: "cityId", value },
+                      //     });
+                      //   }}
+                      //   options={cityOptions}
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      Card Holder <span className="text-danger">*</span>
+                    </label>
+                    <div className="d-flex">
+                      <input
+                        type="checkbox"
+                        checked={selectedCardHolder === "yes"}
+                        onChange={() => handleCardHolderCheckboxChange("yes")}
+                        className="detailed-address-checkbox1"
+                      />
+                      <label className="detailed-address-checkbox-label">
+                        Yes
+                      </label>
+
+                      <input
+                        type="checkbox"
+                        checked={selectedCardHolder === "no"}
+                        onChange={() => handleCardHolderCheckboxChange("no")}
+                        className="detailed-address-checkbox2"
+                      />
+                      <label>No</label>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      Any Insurance <span className="text-danger">*</span>
+                    </label>
+                    <div className="d-flex">
+                      <input
+                        type="checkbox"
+                        checked={selectedInsuranceType === "yes"}
+                        onChange={() => handleInsuranceCheckboxChange("yes")}
+                        className="detailed-address-checkbox1"
+                      />
+                      <label className="detailed-address-checkbox-label">
+                        Yes
+                      </label>
+
+                      <input
+                        type="checkbox"
+                        checked={selectedInsuranceType === "no"}
+                        onChange={() => handleInsuranceCheckboxChange("no")}
+                        className="detailed-address-checkbox2"
+                      />
+                      <label>No</label>
+                    </div>
+                  </div>
+
+                  {showInsuranceDropdown && (
+                    <div className="form-wrap">
+                      <label className="col-form-label">
+                        Insurance Type <span className="text-danger">*</span>
+                      </label>
+                      <Select
+                        classNamePrefix="react-select"
+                        className="select"
+                        options={insuranceOptions}
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="col-md-6">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      Car Owned <span className="text-danger">*</span>
+                    </label>
+                    <div className="d-flex">
+                      <input
+                        type="checkbox"
+                        checked={selectedCarOwned === "yes"}
+                        onChange={() => handleCarOwnedCheckboxChange("yes")}
+                        className="detailed-address-checkbox1"
+                      />
+                      <label className="detailed-address-checkbox-label">
+                        Yes
+                      </label>
+
+                      <input
+                        type="checkbox"
+                        checked={selectedCarOwned === "no"}
+                        onChange={() => handleCarOwnedCheckboxChange("no")}
+                        className="detailed-address-checkbox2"
+                      />
+                      <label>No</label>
+                    </div>
+                  </div>
+
+                  {showCarDropdowns && (
+                    <div className="form-wrap">
+                      <label className="col-form-label ">
+                        Car Brand <span className="text-danger">*</span>
+                      </label>
+                      <Select
+                        classNamePrefix="react-select"
+                        className="select form-wrap"
+                        options={brandOptions}
+                      />
+                      <label className="col-form-label ">
+                        Car Model <span className="text-danger">*</span>
+                      </label>
+                      <Select
+                        classNamePrefix="react-select"
+                        className="select form-wrap"
+                        options={modelOptions}
+                      />
+                      <label className="col-form-label">
+                        Car Purchase Year <span className="text-danger">*</span>
+                      </label>
+                      <Select
+                        classNamePrefix="react-select"
+                        className="select"
+                        options={yearOptions}
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="col-md-6">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      Disposition <span className="text-danger">*</span>
+                    </label>
+                    <Select
+                      classNamePrefix="react-select"
+                      className="select"
+                      value={selectedDisposition}
+                      onChange={handleDispositionChange}
+                      options={dispositionOptions}
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="form-wrap">
+                    <label className="col-form-label">
+                      Remarks <span className="text-danger">*</span>
+                    </label>
+                    <textarea
+                      className="form-control"
+                      rows="5"
+                      placeholder="Enter your remarks here..."
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+
+export default CreditCard;

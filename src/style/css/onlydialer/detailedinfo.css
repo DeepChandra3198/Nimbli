@@ -1,0 +1,29 @@
+.detailed-address-checkbox1{
+    min-height: 22px;
+    display: block;
+    width: 10%;
+}
+.detailed-address-checkbox2{
+    margin-left: 100px;
+    min-height: 22px;
+    display: block;
+    width: 10%;
+}
+.plus-button{
+    height: 25px;
+    width: 25px;
+    background-color: #5CB85C;
+    border: 1px solid #5CB85C;
+    color: #FFF;
+    border-radius: 5px;
+}
+.subtraction-button{
+    height: 25px;
+    width: 25px;
+    background-color: #D9534F;
+    border: 1px solid #D9534F;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+  

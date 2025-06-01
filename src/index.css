@@ -1,0 +1,127 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inline-radio-button {
+  display: flex;
+  gap: 20px;
+}
+
+
+.task-details-li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted gainsboro;
+}
+
+.sidebar-layout-extend {
+  background-color: #fff;
+  max-width: 900px;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-header-extend {
+  padding: 20px;
+  border-bottom: 1px solid #EFF2F5;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  max-width: 900px;
+}
+
+.login_admin {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.login_admin_img {
+  height: 5rem;
+  width: 7rem;
+  border-radius: 50%;
+  margin-bottom: 5rem;
+}
+
+/* .login-btn:first-child:active{
+
+} */
+
+.select_type {
+  color: white;
+  background: #e2d7d7;
+  border-radius: 1rem;
+}
+
+.dotted-line {
+  border: 1px dotted #e6e6eb;
+  margin-bottom: 1.5rem;
+}
+
+.bg-highlight {
+  background-color: #f0ad4e;
+  /* or any color you prefer */
+  font-weight: bold;
+}
+
+.lead-page-pipeline-link {
+  margin: 0 0 3px;
+  padding: 12px 25px 12px 32px;
+  font-size: 10px;
+  font-weight: 300;
+  display: inline-block;
+  text-align: center;
+  background: #F6F6F6;
+  color: #262A2A;
+  position: relative;
+  min-width: 90px;
+
+}
+/* sidebar main menu */
+.admin-margin{
+  margin-bottom: 36px!important;
+}
+.sidebar .sidebar-menu .clinicdropdown > a {
+  background-color: #eae5f7 !important;
+}
+.mini-sidebar .header-left {
+  width: 100% !important;
+}
+.header .header-left{
+  width: 200px !important;
+}
+/* calculator */
+.detailed-calculator-checkbox1{
+  margin-top: 10px;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cfcfcf;
+  border-radius: 50%;
+  outline: none;
+  transition: 0.3s ease-in-out;
+  margin-left: 70px;
+}
+.detailed-calculator-checkbox1:checked {
+  background-color: rgb(72, 113, 248);
+  border-color: rgb(137, 212, 236);
+  /* box-shadow: 0 0 5px lightblue; */
+}
+.calculator-col-form-label{
+  font-size: 14px;
+  color: #262A2A;
+  padding: 10px 0px 5px;
+}
+/* .calculator-text{
+  font-weight: 400;
+} */
