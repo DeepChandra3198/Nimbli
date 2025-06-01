@@ -80,7 +80,7 @@ const Login = () => {
             <div className="login-user-info">
               <div className="login-logo">
                 <img
-                  src="/assets/img/webkype_img.png"
+                  src="/assets/img/nible.png"
                   className="img-fluid"
                   alt="Logo"
                 />
