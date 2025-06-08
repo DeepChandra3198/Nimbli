@@ -81,7 +81,7 @@ import TaskCategory from "../SetUp/TaskMaster/TaskCategory";
 import TaskSubCategory from "../SetUp/TaskMaster/TaskSubCategory";
 
 // import ContactMessages from "../support/contactMessages";
-import TicketStage from "../Support/TicketStage";
+import TicketStage from "../Support/NewTicket";
 
 import Faq from "../Content/Faq";
 
@@ -153,132 +153,40 @@ import ManageBankCommission from "../Partners/ManageBankCommission";
 import ManageTds from "../Partners/ManageTds";
 import ManagePartnerConnectDetails from "../Partners/ManagePartnerConnectDetails";
 
+// inventory and products
+import Products from "../../pages/Inventory&Product/ProductList/ProductList";
+import DisibaledProducts from "../../pages/Inventory&Product/DisibaledProducts/DisibaledProducts";
+import EnaledProducts from "../../pages/Inventory&Product/EnabledProducts/EnabledProducts";
+import BulkUpload from "../../pages/Inventory&Product/BulkProduct/BulkProducts";
 
 
 
-// import TwoStepVerification from "../auth/twoStepVerification";
-// import EmailVerification from "../auth/emailVerification";
-// import Success from "../auth/success";
-// import ResetPassword from "../auth/resetPassword";
-// import Accordion from "../uiInterface/base-ui/accordion";
-// import Avatar from "../uiInterface/base-ui/avatar";
-// import Borders from "../uiInterface/base-ui/borders";
-// import Breadcrumb from "../uiInterface/base-ui/breadcrumb";
-// import Buttons from "../uiInterface/base-ui/buttons";
-// import ButtonsGroup from "../uiInterface/base-ui/buttonsgroup";
-// import Cards from "../uiInterface/base-ui/cards";
-// import Carousel from "../uiInterface/base-ui/carousel";
-// import Colors from "../uiInterface/base-ui/colors";
-// import Dropdowns from "../uiInterface/base-ui/dropdowns";
-// import Grid from "../uiInterface/base-ui/grid";
-// import Images from "../uiInterface/base-ui/images";
-// import Lightboxes from "../uiInterface/base-ui/lightbox";
-// import Media from "../uiInterface/base-ui/media";
-// import Modals from "../uiInterface/base-ui/modals";
-// import NavTabs from "../uiInterface/base-ui/navtabs";
-// import Offcanvas from "../uiInterface/base-ui/offcanvas";
-// import Pagination from "../uiInterface/base-ui/pagination";
-// import Popovers from "../uiInterface/base-ui/popover";
-// import RangeSlides from "../uiInterface/base-ui/rangeslider";
-// import Progress from "../uiInterface/base-ui/progress";
-// import Spinner from "../uiInterface/base-ui/spinner";
-// import Toasts from "../uiInterface/base-ui/toasts";
-// import Typography from "../uiInterface/base-ui/typography";
-// import Video from "../uiInterface/base-ui/video";
-// import Error404 from "../pages/error/error-404";
-// import Error500 from "../pages/error/error-500";
+// Customer 
+import Customer from "../../pages/Customer/AllBuyers/Customers"
 
+// Sales order 
+import OrderList from "../../pages/OrderSales/OderList"
 
-// import PaymentGateways from "../settings/financialSettings/paymentGateways";
-// import UnderMaintenance from "../pages/underMaintenance";
-// import LeadsDashboard from "../mainMenu/leadsDashboard";
-// import Todo from "../application/todo";
-// import Email from "../application/email";
-// import VideoCall from "../application/call/videoCall";
-// import Chat from "../application/chat";
-// import Pages from "../content/pages";
-// import ProjectDashboard from "../mainMenu/projectDashboard";
-// import ContactList from "../crm/contacts/contactList";
-// import CompanyReport from "../reports/companyReport";
-// import ContactReport from "../reports/contactReport";
-// import LeadReport from "../reports/leadReport";
-// import ProjectReport from "../reports/projectReport";
-// import TaskReport from "../reports/taskReport";
-// import AudioCall from "../application/call/audioCall";
-// import CallHistory from "../application/call/callHistory";
-// import FileManager from "../application/fileManager";
+// CMS
+import BlogCategory from "../../pages/CMS/BlogCategory"
+import Blogs from "../../pages/CMS/Blogs"
+import BlogSubCategory from "../../pages/CMS/BlogSubCategory"
+import Faqs from "../../pages/CMS/Faq"
+import Footer from "../../pages/CMS/Footer"
+import HomeBanners from "../../pages/CMS/HomeBanners"
+import MediaPages from "../../pages/CMS/MediaPages"
+import SubFooter from "../../pages/CMS/SubFooter"
+import WebPages from "../../pages/CMS/WebPages"
 
-// import MembershipTransaction from "../membership/membershiptrasaction";
-// import LeadsKanban from "../crm/leads/leadskanban";
-// import Calls from "../crmSetting/calls";
-// import Industry from "../crmSetting/industry";
-// import Sources from "../crmSetting/sources";
-// import ContactStage from "../crmSetting/contactStage";
-// // import BanIpAddress from "../settings/otherSettings/banIpaddress";
-// // import LostReason from "../crmSetting/lostreason";
+//Support
+import CloseTicket from "../../pages/Support/ClosedTicket"
+import HoldTicket from "../../pages/Support/HoldTicket"
+import NewTicket from "../../pages/Support/NewTicket"
+import OpenTicket from "../../pages/Support/OpenTicket"
 
+//Reports
+import OrderReport from "../../pages/Reports/Order"
 
-// import LostReason from "../crmSetting/lostReason";
-
-// import CompaniesGrid from "../crm/companies/companiesGrid";
-// import Pipeline from "../crm/pipeline";
-// import Projects from "../crm/projects";
-// import Task from "../crm/task";
-
-// import States from "../content/states";
-// import Testimonials from "../content/testimonials";
-// import ClipBoard from "../uiInterface/advanced-ui/clipboard";
-// import Counter from "../uiInterface/advanced-ui/counter";
-// import DragAndDrop from "../uiInterface/advanced-ui/dragdrop";
-// import Rating from "../uiInterface/advanced-ui/rating";
-// import Stickynote from "../uiInterface/advanced-ui/stickynote";
-// import TextEditor from "../uiInterface/advanced-ui/texteditor";
-// import Timeline from "../uiInterface/advanced-ui/timeline";
-// import Scrollbar from "../uiInterface/advanced-ui/uiscrollbar";
-// import Apexchart from "../uiInterface/charts/apexcharts";
-// import FeatherIcons from "../uiInterface/icons/feathericon";
-// import FontawesomeIcons from "../uiInterface/icons/fontawesome";
-// import MaterialIcons from "../uiInterface/icons/materialicon";
-// import PE7Icons from "../uiInterface/icons/pe7icons";
-// import SimplelineIcons from "../uiInterface/icons/simplelineicon";
-// import ThemifyIcons from "../uiInterface/icons/themify";
-// import TypiconIcons from "../uiInterface/icons/typicons";
-// import WeatherIcons from "../uiInterface/icons/weathericons";
-// import BasicInputs from "../uiInterface/forms/formelements/basic-inputs";
-// import CheckboxRadios from "../uiInterface/forms/formelements/checkbox-radios";
-// import InputGroup from "../uiInterface/forms/formelements/input-group";
-// import GridGutters from "../uiInterface/forms/formelements/grid-gutters";
-// import FormSelect from "../uiInterface/forms/formelements/form-select";
-// import FormMask from "../uiInterface/forms/formelements/form-mask";
-// import FileUpload from "../uiInterface/forms/formelements/fileupload";
-// import FormHorizontal from "../uiInterface/forms/formelements/layouts/form-horizontal";
-// import FormVertical from "../uiInterface/forms/formelements/layouts/form-vertical";
-// import FloatingLabel from "../uiInterface/forms/formelements/layouts/floating-label";
-// import FormValidation from "../uiInterface/forms/formelements/layouts/form-validation";
-// import FormSelect2 from "../uiInterface/forms/formelements/layouts/form-select2";
-// import FormWizard from "../uiInterface/forms/formelements/form-wizard";
-// import DataTables from "../uiInterface/table/data-tables";
-// import TablesBasic from "../uiInterface/table/tables-basic";
-// import IonicIcons from "../uiInterface/icons/ionicicons";
-// import TasksImportant from "../crm/task/tasksImportant";
-// import TaskCompleted from "../crm/task/taskCompleted";
-// import ActivityMetting from "../crm/activityMetting";
-// import Payments from "../crm/payments";
-// import Proposalslist from "../crm/proposals/proposalslist";
-// import Proposalsgrid from "../crm/proposals/proposalsgrid";
-// import ProposalsView from "../crm/proposals/proposalsview";
-// import Contractslist from "../crm/contracts/contracts-list";
-// import ContractsGrid from "../crm/contracts/contracts-grid";
-// import InvoiceList from "../crm/invoices/invoicelist";
-// import InvoiceGrid from "../crm/invoices/invoicegrid";
-// import EstimationList from "../crm/estimations/estimation-list";
-// import EstimationKanban from "../crm/estimations/estimation-kanban";
-// import Badges from "../uiInterface/base-ui/badges";
-// import BanIpAddress from "../settings/otherSettings/banIpaddress";
-// import Placeholder from "../uiInterface/base-ui/placeholder";
-// import Alert from "../uiInterface/base-ui/alert";
-// import Tooltips from "../uiInterface/base-ui/tooltips";
-// import Ribbon from "../uiInterface/advanced-ui/ribbon";
 
 const route = all_routes;
 
@@ -341,8 +249,8 @@ export const publicRoutes = [
         element: <ManageTds />,
     },
     {
-        path:route.dialer,
-        element:<OnlyDialer/>
+        path: route.dialer,
+        element: <OnlyDialer />
     },
     {
         path: route.leadsDetails,
@@ -476,6 +384,62 @@ export const publicRoutes = [
     {
         path: route.taskSubCategory,
         element: <TaskSubCategory />,
+    },
+    {
+        path: route.products,
+        element: < Products />,
+    },
+    {
+        path: route.disibaledProducts,
+        element: < DisibaledProducts />,
+    },
+    {
+        path: route.enabledProducts,
+        element: < EnaledProducts />,
+    },
+    {
+        path: route.bulkUpload,
+        element: < BulkUpload />,
+    },
+    {
+        path: route.buyers,
+        element: < Customer />,
+    },
+    {
+        path: route.newOrders,
+        element: < OrderList />,
+    },
+    {
+        path: route.acceptedOrders,
+        element: < OrderList />,
+    },
+    {
+        path: route.packedOrders,
+        element: < OrderList />,
+    },
+    {
+        path: route.readyToShip,
+        element: < OrderList />,
+    },
+    {
+        path: route.shippedOrders,
+        element: < OrderList />,
+    },
+    {
+        path: route.deliveredOrders,
+        element: < OrderList />,
+    },
+    {
+        path: route.cancelledOrders,
+        element: < OrderList />,
+    },
+    {
+        path: route.returnedOrders,
+        element: < OrderList />,
+    },
+    {
+        path: route.pendingOrders,
+        element: < OrderList />,
     },
 
     // {
@@ -651,19 +615,83 @@ export const publicRoutes = [
     },
     {
         path: route.creditscore,
-        element:<CreditScore/>
+        element: <CreditScore />
     },
     {
         path: route.cuscibildet,
-        element: <CusCibilDet/>,
+        element: <CusCibilDet />,
     },
     {
         path: route.ecard,
-        element: <Ecard/>,
+        element: <Ecard />,
     },
     {
-        path: route. calculator,
-        element: <Calculator/>,
+        path: route.calculator,
+        element: <Calculator />,
+    },
+    {
+        path: route.homePageBanners,
+        element: <HomeBanners />
+    },
+    {
+        path: route.faqs,
+        element: <Faqs />
+    },
+    {
+        path: route.blogCategory,
+        element: <BlogCategory />
+    },
+    {
+        path: route.blog,
+        element: <Blogs />
+    },
+    {
+        path: route.webPages,
+        element: <BlogSubCategory />
+    },
+    {
+        path: route.mediaFiles,
+        element: <WebPages />
+    },
+    {
+        path: route.header,
+        element: <MediaPages />
+    },
+    {
+        path: route.subHeader,
+        element: <SubFooter />
+    }, // Assuming SubFooter is header? Adjust if needed
+    {
+        path: route.subHeaderDetail,
+        element: <SubFooter />
+    },
+    {
+        path: route.footer,
+        element: <Footer />
+    },
+
+    // Support
+    {
+        path: route.newTickets,
+        element: <NewTicket />
+    },
+    {
+        path: route.openTickets,
+        element: <OpenTicket />
+    },
+    {
+        path: route.inProcessTickets,
+        element: <HoldTicket />
+    }, // Assuming HoldTicket = In Process
+    {
+        path: route.closedTickets,
+        element: <CloseTicket />
+    },
+
+    // Reports
+    {
+        path: route.orderReport,
+        element: <OrderReport />
     },
 
     //   {

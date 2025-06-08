@@ -61,168 +61,87 @@ const Tickets = () => {
         }));
     };
     const columns = [
-        {
-            title: "",
-            dataIndex: "",
-            render: (text, record, index) => (
-                <div
-                    className={`set-star rating-select ${stars[index] ? "filled" : ""}`}
-                    onClick={() => handleStarToggle(index)}
-                >
-                    <i className="fa fa-star"></i>
-                </div>
-            ),
-        },
-        {
-            title: "Ticket ID",
-            dataIndex: "ticketId",
-            key: "ticketId",
-        },
-        {
-            title: "Subject",
-            dataIndex: "subject",
-            key: "subject",
-        },
-        {
-            title: "Assigned",
-            dataIndex: "assigned",
-            key: "assigned",
-            render: (text, record) => (
-                <h2 className="table-avatar d-flex align-items-center">
-                    <Link to="#" className="avatar">
-                        <ImageWithBasePath
-                            className="avatar-img"
-                            src={record.assignedAvatar}
-                            alt="User Image"
-                        />
-                    </Link>
-                    <Link to="#" className="profile-split d-flex flex-column">
-                        {record.assignedName}
-                    </Link>
-                </h2>
-            ),
-        },
-        {
-            title: "Created On",
-            dataIndex: "createdOn",
-            key: "createdOn",
-        },
-        {
-            title: "Due Date",
-            dataIndex: "dueDate",
-            key: "dueDate",
-        },
-        {
-            title: "Assignee",
-            dataIndex: "assignee",
-            key: "assignee",
-            render: (text, record) => (
-                <h2 className="table-avatar d-flex align-items-center">
-                    <Link to="#" className="avatar">
-                        <ImageWithBasePath
-                            className="avatar-img"
-                            src={record.assigneeAvatar}
-                            alt="User Image"
-                        />
-                    </Link>
-                    <Link to="#" className="profile-split d-flex flex-column">
-                        {record.assigneeName} <span>{record.role} </span>
-                    </Link>
-                </h2>
-            ),
-        },
-        {
-            title: "Last Reply",
-            dataIndex: "lastReply",
-            key: "lastReply",
-        },
-        {
-            title: "Priority",
-            dataIndex: "priority",
-            render: (text) => (
-                <div>
-                    {text === "Medium" && (
-                        <span className="badge badge-tag badge-warning-light">
-                            {text}
-                        </span>
-                    )}
-                    {text === "Low" && (
-                        <span className="badge badge-tag badge-purple-light">
-                            {text}
-                        </span>
-                    )}
-                    {text === "High" && (
-                        <span className="badge badge-tag badge-danger-light">
-                            {text}
-                        </span>
-                    )}
+  {
+    title: (
+      <input
+        type="checkbox"
+        // Add your onChange handler here for "select all" functionality
+      />
+    ),
+    dataIndex: "select",
+    key: "select",
+    render: (_, record) => (
+      <input
+        type="checkbox"
+        // Add your onChange handler here for individual row selection
+        // Example: checked={selectedRowKeys.includes(record.id)}
+      />
+    ),
+    width: 40,
+  },
+  {
+    title: "Sl#",
+    dataIndex: "id",
+    key: "id",
+    render: (text, record, index) => <span>{index + 1}</span>, // or just text for id if you want actual id
+    sorter: (a, b) => a.id - b.id,
+    width: 60,
+  },
+  {
+    title: "Complain Details",
+    dataIndex: "complain",
+    key: "complain",
+    render: (text) => <span>{text}</span>,
+    sorter: (a, b) => a.complain.localeCompare(b.complain),
+  },
+  {
+    title: "Ticket Details",
+    dataIndex: "ticket",
+    key: "ticket",
+    render: (text) => <span>{text}</span>,
+    sorter: (a, b) => a.ticket.localeCompare(b.ticket),
+  },
+  {
+    title: "Assigned To",
+    dataIndex: "assignedTo",
+    key: "assignedTo",
+    render: (text) => <span>{text}</span>,
+    sorter: (a, b) => a.assignedTo.localeCompare(b.assignedTo),
+  },
+  {
+    title: "Action",
+    key: "action",
+    render: (_, record) => (
+      <div className="dropdown table-action">
+        <Link
+          to="#"
+          className="action-icon"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i className="fa fa-ellipsis-v" />
+        </Link>
+        <div className="dropdown-menu dropdown-menu-right">
+          <Link className="dropdown-item" to="#">
+            <i className="ti ti-eye text-primary" /> View
+          </Link>
+          <Link className="dropdown-item" to="#">
+            <i className="ti ti-edit text-info" /> Update
+          </Link>
+          <Link
+            className="dropdown-item"
+            to="#"
+            data-bs-toggle="modal"
+            data-bs-target="#delete_modal"
+          >
+            <i className="ti ti-trash text-danger" /> Delete
+          </Link>
+        </div>
+      </div>
+    ),
+  },
+];
 
-                </div>
-            ),
-        },
-        {
-            title: "Status",
-            dataIndex: "status",
-            render: (text) => (
-                <div>
-                    {text === "Resolved" && (
-                        <span className="badge badge-pill badge-status bg-success">
-                            {text}
-                        </span>
-                    )}
-                    {text === "Closed" && (
-                        <span className="badge badge-pill badge-status bg-info">
-                            {text}
-                        </span>
-                    )}
-                    {text === "Pending" && (
-                        <span className="badge badge-pill badge-status bg-warning">
-                            {text}
-                        </span>
-                    )}
-                    {text === "Open" && (
-                        <span className="badge badge-pill badge-status bg-danger">
-                            {text}
-                        </span>
-                    )}
-
-                </div>
-            ),
-        },
-        {
-            title: "Action",
-            key: "action",
-            render: () => (
-                <div className="dropdown table-action">
-                    <Link
-                        to="#"
-                        className="action-icon"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                    >
-                        <i className="fa fa-ellipsis-v"></i>
-                    </Link>
-                    <div className="dropdown-menu dropdown-menu-right">
-                        <Link
-                            className="dropdown-item edit-popup"
-                            to="#"
-                            onClick={openSidebarPopup2}
-                        >
-                            <i className="ti ti-edit text-blue"></i> Edit
-                        </Link>
-                        <Link
-                            className="dropdown-item"
-                            to="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#delete_contact"
-                        >
-                            <i className="ti ti-trash text-danger"></i> Delete
-                        </Link>
-                    </div>
-                </div>
-            ),
-        },
-    ];
     return (
         <div>
             {/* Page Wrapper */}

@@ -14,18 +14,18 @@ export const all_routes = {
 
 
     // services
-     managePartnerConnect: '/partner/manage-partner-connect',
-     managestaff:'/partner/manage-staff',
-     manageInvoices:'/partner/manage-invoices',
-     manageLeads:"/partner/manage-leads",
-     manageBankCommission:"/partner/manage-bank-commission",
-     manageTDS:"/partner/manage-tds",
-     managePartnerConnectDetails: '/partner/manage-partner-connect-details',
+    managePartnerConnect: '/partner/manage-partner-connect',
+    managestaff: '/partner/manage-staff',
+    manageInvoices: '/partner/manage-invoices',
+    manageLeads: "/partner/manage-leads",
+    manageBankCommission: "/partner/manage-bank-commission",
+    manageTDS: "/partner/manage-tds",
+    managePartnerConnectDetails: '/partner/manage-partner-connect-details',
 
 
 
     // credit Score
-    creditscore:"/creditscore",
+    creditscore: "/creditscore",
     cuscibildet: "/creditscore/customer-cibil-detail",
 
 
@@ -49,10 +49,10 @@ export const all_routes = {
     leadsDetails: "/onlydialer/leads-details/:leadId",
 
     // E-card
-    ecard:"/E-card",
+    ecard: "/E-card",
 
     // Calculator
-    calculator:"/calculator",
+    calculator: "/calculator",
 
     //sales
     // leads: "/sales/leads",
@@ -60,7 +60,7 @@ export const all_routes = {
     // leadsDetails: "/sales/leads-details/:leadId",
 
     //customer
-    customers:"/customer/customers",
+    customers: "/customer/customers",
     customerList: "/customer/customer-list",
     customerGrid: "/customer/customer-grid",
     customerDetails: "/customer/customer-details",
@@ -248,4 +248,47 @@ export const all_routes = {
     sizeColourOption: "/product/size-colour-option",
     filters: "/product/filters",
     filtersValue: "/product/filters-value",
+
+
+    // Inventory and products
+    products: "/products",
+    disibaledProducts: "/disibaledProducts",
+    enabledProducts: "/enaledProducts",
+    bulkUpload: "/bulkUpload",
+    buyers: "/buyers",
+    newOrders: "/sales-orders/new",
+    acceptedOrders: "/sales-orders/accepted",
+    packedOrders: "/sales-orders/packed",
+    readyToShip: "/sales-orders/ready-to-ship",
+    shippedOrders: "/sales-orders/shipped",
+    deliveredOrders: "/sales-orders/delivered",
+    cancelledOrders: "/sales-orders/cancelled",
+    returnedOrders: "/sales-orders/returned",
+    pendingOrders: "/sales-orders/pending",
+
+    // CMS
+    homePageBanners: "/cms/home-banners",
+    faqs: "/cms/faqs",
+    blogCategory: "/cms/blog-category",
+    blog: "/cms/blog",
+    webPages: "/cms/web-pages",
+    mediaFiles: "/cms/media-files",
+    header: "/cms/header",
+    subHeader: "/cms/sub-header",
+    subHeaderDetail: "/cms/sub-header/details",
+    footer: "/cms/footer",
+
+    //Support
+    newTickets: "/support/new-tickets",
+    openTickets: "/support/open-tickets",
+    inProcessTickets: "/support/in-process",
+    closedTickets: "/support/closed-tickets",
+
+    //Reports
+    salesReport: "/reports/sales",
+    orderReport: "/reports/orders",
+    productReport: "/reports/products",
+    customerReport: "/reports/customers",
+    inventoryReport: "/reports/inventory",
+    settlementReport: "/reports/settlements",
 };
