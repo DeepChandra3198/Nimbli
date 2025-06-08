@@ -124,67 +124,67 @@ const Category = () => {
         }));
     };
 
-   const columns = [
-  {
-    title: "#",
-    dataIndex: "index",
-    render: (text, record, index) => <span>{index + 1}</span>,
-  },
-  {
-    title: "Page Name",
-    dataIndex: "name",
-    render: (text) => <span>{text}</span>,
-    sorter: (a, b) => a.name.localeCompare(b.name),
-  },
-  {
-    title: "Page Banner",
-    dataIndex: "banner",
-    render: (url) => (
-      <img
-        src={url}
-        alt="Page Banner"
-        style={{ width: 60, height: 40, objectFit: "cover" }}
-      />
-    ),
-  },
-  {
-    title: "Page URL",
-    dataIndex: "url",
-    render: (text) => (
-      <a href={text} target="_blank" rel="noopener noreferrer">
-        {text}
-      </a>
-    ),
-  },
-  {
-    title: "Action",
-    render: (_, record) => (
-      <div className="dropdown table-action">
-        <Link
-          to="#"
-          className="action-icon"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i className="fa fa-ellipsis-v" />
-        </Link>
-        <div className="dropdown-menu dropdown-menu-right">
-          <Link className="dropdown-item" to="#">
-            <i className="ti ti-edit text-blue" /> Edit
-          </Link>
-          <Link
-            className="dropdown-item"
-            to="#"
-            data-bs-toggle="modal"
-            data-bs-target="#delete_modal"
-          >
-            <i className="ti ti-trash text-danger" /> Delete
-          </Link>
-        </div>
-      </div>
-    ),
-  },
-];
+    const columns = [
+        {
+            title: "#",
+            dataIndex: "index",
+            render: (text, record, index) => <span>{index + 1}</span>,
+        },
+        {
+            title: "Page Name",
+            dataIndex: "name",
+            render: (text) => <span>{text}</span>,
+            sorter: (a, b) => a.name.localeCompare(b.name),
+        },
+        {
+            title: "Page Banner",
+            dataIndex: "banner",
+            render: (url) => (
+                <img
+                    src={url}
+                    alt="Page Banner"
+                    style={{ width: 60, height: 40, objectFit: "cover" }}
+                />
+            ),
+        },
+        {
+            title: "Page URL",
+            dataIndex: "url",
+            render: (text) => (
+                <a href={text} target="_blank" rel="noopener noreferrer">
+                    {text}
+                </a>
+            ),
+        },
+        {
+            title: "Action",
+            render: (_, record) => (
+                <div className="dropdown table-action">
+                    <Link
+                        to="#"
+                        className="action-icon"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <i className="fa fa-ellipsis-v" />
+                    </Link>
+                    <div className="dropdown-menu dropdown-menu-right">
+                        <Link className="dropdown-item" to="#">
+                            <i className="ti ti-edit text-blue" /> Edit
+                        </Link>
+                        <Link
+                            className="dropdown-item"
+                            to="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                        >
+                            <i className="ti ti-trash text-danger" /> Delete
+                        </Link>
+                    </div>
+                </div>
+            ),
+        },
+    ];
 
 
 
@@ -234,7 +234,7 @@ const Category = () => {
                                 <div className="row align-items-center">
                                     <div className="col-4">
                                         <h4 className="page-title">
-                                            Orders<span className="count-title">12</span>
+                                            Web Pages<span className="count-title">12</span>
                                         </h4>
                                     </div>
                                     <div className="col-8 text-end">
@@ -1028,7 +1028,7 @@ const Category = () => {
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        {/* <li>
+                                                        <li>
                                                             <Link
                                                                 to="#"
                                                                 className="btn btn-primary add-popup"
@@ -1037,9 +1037,9 @@ const Category = () => {
                                                                 }
                                                             >
                                                                 <i className="ti ti-square-rounded-plus" />
-                                                                Add Orders
+                                                                Add Web Pages
                                                             </Link>
-                                                        </li> */}
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1112,7 +1112,7 @@ const Category = () => {
             <div className={activityToggle ? "toggle-popup sidebar-popup" : "toggle-popup"}>
                 <div className="sidebar-layout">
                     <div className="sidebar-header">
-                        <h4>Add New Product</h4>
+                        <h4>Add New Page</h4>
                         <Link to="#" className="sidebar-close toggle-btn" onClick={() => setActivityToggle(!activityToggle)}>
                             <i className="ti ti-x" />
                         </Link>
@@ -1122,40 +1122,56 @@ const Category = () => {
                         <form action="#" className="toggle-height">
                             <div className="pro-create">
                                 <div className="accordion-lists" id="list-accord">
-
                                     <div className="user-accordion-item">
-                                        <Link to="#" className="accordion-wrap" data-bs-toggle="collapse" data-bs-target="#product-info">
-                                            <span><i className="ti ti-package" /></span>
-                                            Product Info
+                                        <Link to="#" className="accordion-wrap" data-bs-toggle="collapse" data-bs-target="#page-info">
+                                            <span><i className="ti ti-file-description" /></span>
+                                            Page Info
                                         </Link>
-                                        <div className="accordion-collapse collapse show" id="product-info" data-bs-parent="#list-accord">
+                                        <div className="accordion-collapse collapse show" id="page-info" data-bs-parent="#list-accord">
                                             <div className="content-collapse">
                                                 <div className="row">
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Product Title</label><input type="text" className="form-control" placeholder="Enter product title" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Product SKU <span className="text-danger">*</span></label><input type="text" className="form-control" placeholder="Enter SKU" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Product Barcode</label><input type="text" className="form-control" placeholder="Enter barcode" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Product Seller</label><Select className="select" options={[]} placeholder="Select seller" classNamePrefix="react-select" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Product Condition</label><Select className="select" options={[{ value: 'new', label: 'New' }, { value: 'used', label: 'Used' }]} placeholder="Select condition" classNamePrefix="react-select" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Product GST</label><input type="text" className="form-control" placeholder="Enter GST %" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>HSN Code</label><input type="text" className="form-control" placeholder="Enter HSN code" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>YouTube URL</label><input type="text" className="form-control" placeholder="Enter YouTube URL" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Product Category</label><Select className="select" options={[]} placeholder="Select category" classNamePrefix="react-select" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Product Brand</label><Select className="select" options={[]} placeholder="Select brand" classNamePrefix="react-select" /></div></div>
-                                                    <div className="col-md-12"><div className="form-wrap"><label>Product Images (Up to 6)</label><input type="file" className="form-control" multiple /></div></div>
-                                                    <div className="col-md-12"><div className="form-wrap"><label>Description & Terms</label><textarea className="form-control editor" rows="4"></textarea></div></div>
-                                                    <div className="col-md-12"><div className="form-wrap"><label>Size Chart</label><textarea className="form-control editor" rows="3"></textarea></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Product Weight (g/kg)</label><input type="text" className="form-control" placeholder="Enter weight" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Dimensions (L x B x H)</label><div className="d-flex gap-2"><input type="text" className="form-control" placeholder="L" /><input type="text" className="form-control" placeholder="B" /><input type="text" className="form-control" placeholder="H" /></div></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Warranty</label><input type="text" className="form-control" placeholder="Enter warranty info" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Meta Title</label><input type="text" className="form-control" placeholder="Enter meta title" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Meta Description</label><input type="text" className="form-control" placeholder="Enter meta description" /></div></div>
-                                                    <div className="col-md-6"><div className="form-wrap"><label>Meta Keywords</label><input type="text" className="form-control" placeholder="Enter meta keywords" /></div></div>
-                                                    <div className="col-md-12"><div className="form-wrap"><label>Disclaimer</label><textarea className="form-control editor" rows="3"></textarea></div></div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-wrap">
+                                                            <label>Page Name <span className="text-danger">*</span></label>
+                                                            <input type="text" className="form-control" placeholder="Enter page name" required />
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-wrap">
+                                                            <label>SEO Title</label>
+                                                            <input type="text" className="form-control" placeholder="Enter SEO title" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-wrap">
+                                                            <label>SEO Description</label>
+                                                            <textarea className="form-control" rows="3" placeholder="Enter SEO description"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-wrap">
+                                                            <label>SEO Keyword</label>
+                                                            <input type="text" className="form-control" placeholder="Enter SEO keywords" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-wrap">
+                                                            <label>Page Content</label>
+                                                            <textarea className="form-control editor" rows="6" placeholder="Enter page content"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-wrap">
+                                                            <label>
+                                                                Page Banner <span className="text-muted">(1000x400, Max 2MB)</span>
+                                                            </label>
+                                                            <input type="file" accept=".jpeg,.jpg,.png,.webp" className="form-control" />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
 
@@ -1163,12 +1179,13 @@ const Category = () => {
                                 <Link to="#" className="btn btn-light sidebar-close" onClick={() => setActivityToggle(!activityToggle)}>
                                     Cancel
                                 </Link>
-                                <Link to="#" className="btn btn-primary">Create</Link>
+                                <Link to="#" className="btn btn-primary">Create Page</Link>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+
 
 
             {/* /Add Company */}
