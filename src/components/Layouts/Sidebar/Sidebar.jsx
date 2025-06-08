@@ -211,7 +211,7 @@ const Sidebar = ({ setMiniSidebar, setExpandMenu }) => {
                                             <li><Link to={route.mediaFiles}>Media Files</Link></li>
                                             <li><Link to={route.header}>Header</Link></li>
 
-                                            <li className="submenu">
+                                            {/* <li className="submenu">
                                                 <Link
                                                     to="#"
                                                     className={openMenus['subHeader'] ? "subdrop active" : "subdrop"}
@@ -226,7 +226,7 @@ const Sidebar = ({ setMiniSidebar, setExpandMenu }) => {
                                                         <li><Link to={route.subHeaderDetail}>Sub Header for this</Link></li>
                                                     </ul>
                                                 )}
-                                            </li>
+                                            </li> */}
 
                                             <li><Link to={route.footer}>Footer</Link></li>
                                         </ul>

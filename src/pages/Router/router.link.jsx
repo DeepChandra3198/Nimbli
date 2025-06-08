@@ -646,15 +646,15 @@ export const publicRoutes = [
         element: <Blogs />
     },
     {
-        path: route.webPages,
+        path: route.blogCategory,
         element: <BlogSubCategory />
     },
     {
-        path: route.mediaFiles,
+        path: route.webPages,
         element: <WebPages />
     },
     {
-        path: route.header,
+        path: route.mediaFiles,
         element: <MediaPages />
     },
     {
