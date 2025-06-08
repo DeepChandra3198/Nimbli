@@ -270,12 +270,11 @@ export const all_routes = {
     homePageBanners: "/cms/home-banners",
     faqs: "/cms/faqs",
     blogCategory: "/cms/blog-category",
+    blogSubCateogory: "/cms/blog-Sub-Category",
     blog: "/cms/blog",
     webPages: "/cms/web-pages",
     mediaFiles: "/cms/media-files",
     header: "/cms/header",
-    subHeader: "/cms/sub-header",
-    subHeaderDetail: "/cms/sub-header/details",
     footer: "/cms/footer",
 
     //Support

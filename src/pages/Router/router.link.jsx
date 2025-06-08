@@ -646,7 +646,7 @@ export const publicRoutes = [
         element: <Blogs />
     },
     {
-        path: route.blogCategory,
+        path: route.blogSubCateogory,
         element: <BlogSubCategory />
     },
     {

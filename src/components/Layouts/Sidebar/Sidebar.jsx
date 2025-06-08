@@ -206,28 +206,11 @@ const Sidebar = ({ setMiniSidebar, setExpandMenu }) => {
                                             <li><Link to={route.homePageBanners}>Home Page Banners</Link></li>
                                             <li><Link to={route.faqs}>FAQs</Link></li>
                                             <li><Link to={route.blogCategory}>Blog Category</Link></li>
+                                            <li><Link to={route.blogSubCateogory}>Blog Sub-Category</Link></li>
                                             <li><Link to={route.blog}>Blog</Link></li>
                                             <li><Link to={route.webPages}>Web Pages</Link></li>
                                             <li><Link to={route.mediaFiles}>Media Files</Link></li>
-                                            <li><Link to={route.header}>Header</Link></li>
-
-                                            {/* <li className="submenu">
-                                                <Link
-                                                    to="#"
-                                                    className={openMenus['subHeader'] ? "subdrop active" : "subdrop"}
-                                                    onClick={() => handleMenu('subHeader')}
-                                                >
-                                                    SUB HEADER
-                                                    <span className="menu-arrow"></span>
-                                                </Link>
-                                                {openMenus['subHeader'] && (
-                                                    <ul>
-                                                        <li><Link to={route.subHeader}>Main Sub Header</Link></li>
-                                                        <li><Link to={route.subHeaderDetail}>Sub Header for this</Link></li>
-                                                    </ul>
-                                                )}
-                                            </li> */}
-
+                                            {/* <li><Link to={route.header}>Header</Link></li> */}
                                             <li><Link to={route.footer}>Footer</Link></li>
                                         </ul>
                                     )}
@@ -246,7 +229,6 @@ const Sidebar = ({ setMiniSidebar, setExpandMenu }) => {
 
                                     {openMenus['support'] && (
                                         <ul>
-                                            <li><Link to={route.addTicket}>Add New Ticket</Link></li>
                                             <li><Link to={route.newTickets}>New Tickets</Link></li>
                                             <li><Link to={route.openTickets}>Open Tickets</Link></li>
                                             <li><Link to={route.inProcessTickets}>In Process Tickets</Link></li>
