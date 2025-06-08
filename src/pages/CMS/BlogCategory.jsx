@@ -124,91 +124,91 @@ const Category = () => {
         }));
     };
 
-const columns = [
-  {
-    title: "#",
-    dataIndex: "index",
-    render: (text, record, index) => <span>{index + 1}</span>,
-  },
-  {
-    title: "Icon",
-    dataIndex: "icon",
-    render: (url) => (
-      <img
-        src={url}
-        alt="Icon"
-        style={{ width: 30, height: 30, objectFit: "contain" }}
-      />
-    ),
-  },
-  {
-    title: "Name",
-    dataIndex: "name",
-    render: (text) => <span>{text}</span>,
-    sorter: (a, b) => a.name.localeCompare(b.name),
-  },
-  {
-    title: "Banner",
-    dataIndex: "banner",
-    render: (url) => (
-      <img
-        src={url}
-        alt="Banner"
-        style={{ width: 60, height: 40, objectFit: "cover" }}
-      />
-    ),
-  },
-  {
-    title: "Description",
-    dataIndex: "description",
-    render: (text) => (
-      <span
-        style={{
-          display: "-webkit-box",
-          WebkitLineClamp: 2,
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
-        }}
-      >
-        {text}
-      </span>
-    ),
-  },
-  {
-    title: "Mapped Blogs",
-    dataIndex: "mappedBlogs",
-    render: (text) => <span>{text}</span>,
-    sorter: (a, b) => a.mappedBlogs - b.mappedBlogs,
-  },
-  {
-    title: "Action",
-    render: (_, record) => (
-      <div className="dropdown table-action">
-        <Link
-          to="#"
-          className="action-icon"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i className="fa fa-ellipsis-v" />
-        </Link>
-        <div className="dropdown-menu dropdown-menu-right">
-          <Link className="dropdown-item" to="#">
-            <i className="ti ti-edit text-blue" /> Edit
-          </Link>
-          <Link
-            className="dropdown-item"
-            to="#"
-            data-bs-toggle="modal"
-            data-bs-target="#delete_modal"
-          >
-            <i className="ti ti-trash text-danger" /> Delete
-          </Link>
-        </div>
-      </div>
-    ),
-  },
-];
+    const columns = [
+        {
+            title: "#",
+            dataIndex: "index",
+            render: (text, record, index) => <span>{index + 1}</span>,
+        },
+        {
+            title: "Icon",
+            dataIndex: "icon",
+            render: (url) => (
+                <img
+                    src={url}
+                    alt="Icon"
+                    style={{ width: 30, height: 30, objectFit: "contain" }}
+                />
+            ),
+        },
+        {
+            title: "Name",
+            dataIndex: "name",
+            render: (text) => <span>{text}</span>,
+            sorter: (a, b) => a.name.localeCompare(b.name),
+        },
+        {
+            title: "Banner",
+            dataIndex: "banner",
+            render: (url) => (
+                <img
+                    src={url}
+                    alt="Banner"
+                    style={{ width: 60, height: 40, objectFit: "cover" }}
+                />
+            ),
+        },
+        {
+            title: "Description",
+            dataIndex: "description",
+            render: (text) => (
+                <span
+                    style={{
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                    }}
+                >
+                    {text}
+                </span>
+            ),
+        },
+        {
+            title: "Mapped Blogs",
+            dataIndex: "mappedBlogs",
+            render: (text) => <span>{text}</span>,
+            sorter: (a, b) => a.mappedBlogs - b.mappedBlogs,
+        },
+        {
+            title: "Action",
+            render: (_, record) => (
+                <div className="dropdown table-action">
+                    <Link
+                        to="#"
+                        className="action-icon"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <i className="fa fa-ellipsis-v" />
+                    </Link>
+                    <div className="dropdown-menu dropdown-menu-right">
+                        <Link className="dropdown-item" to="#">
+                            <i className="ti ti-edit text-blue" /> Edit
+                        </Link>
+                        <Link
+                            className="dropdown-item"
+                            to="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                        >
+                            <i className="ti ti-trash text-danger" /> Delete
+                        </Link>
+                    </div>
+                </div>
+            ),
+        },
+    ];
 
 
 
@@ -259,7 +259,7 @@ const columns = [
                                 <div className="row align-items-center">
                                     <div className="col-4">
                                         <h4 className="page-title">
-                                            Orders<span className="count-title">12</span>
+                                            Sliders<span className="count-title">12</span>
                                         </h4>
                                     </div>
                                     <div className="col-8 text-end">
